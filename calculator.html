@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四则运算</title>
+    <style>
+        .box {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            background-color: rgb(228, 240, 227);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .d1 {
+            position: relative;
+            left: 30px;
+        }
+        
+        .d2 {
+            position: relative;
+            top: 25px;
+            left: 23px;
+        }
+        
+        .d3 {
+            position: relative;
+            top: 50px;
+            left: 30px;
+        }
+        
+        .d4 {
+            position: relative;
+            top: 90px;
+            left: 33px;
+        }
+        
+        .button {
+            position: relative;
+            background-color: greenyellow;
+            left: 87px;
+            top: 70px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form method="post" name="myform" action="">
+            <h1>四则运算</h1>
+            <div class="d1">加数1：<input type="number" id="input1"></div>
+            <div class="d2">运算符：<select name="Option" id="Option" style="width: 169.6px;height: 21.2px;">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            
+        </select>
+            </div>
+            <div class="d3">加数2：<input type="number" id="input2"></div>
+            <input class="button" type="button" style="width: 169.6px;height: 21.2px;" value="计算" onclick="validate()"></input>
+            <div class="d4">结果：
+                <input type="number" id="Result">
+                </input>
+        </form>
+        <script>
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            function validate() {
+                var result = 0;
+                var Input1 = Number($("input1").value);
+                var Input2 = Number($("input2").value);
+                var Opt = $("Option").value;
+                if (Opt == "+") {
+                    result = Input1 + Input2;
+                } else if (Opt == "-") {
+                    result = Input1 - Input2;
+                } else if (Opt == "*") {
+                    result = Input1 * Input2;
+                } else if (Opt == "/") {
+                    result = Input1 / Input2;
+                }
+                Result.value = result;
+            }
+        </script>
+        </div>
+</body>
+
+</html>
